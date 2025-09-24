@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.main {
+    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/75b0ed49-75ab-4a63-bd45-37bc2c95cb73/web/IN-en-20250623-TRIFECTA-perspective_ae5833b7-6ce5-4e88-853e-014f38c506f1_large.jpg);
+    background-position: center center;
+    background-size: max(1200px, 100vw);
+
+    background-repeat: no-repeat;
+    height: 644px;
+    position: relative;
+}
+
+.main .box {
+    height: 644px;
+    width: 100%;
+    opacity: 0.69;
+    position: absolute;
+    top: 0;
+    background-color: black;
+}
+
+nav {
+    max-width: 80vw;
+    justify-content: space-between;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+
+nav img {
+    width: 150px;
+    position: relative;
+    z-index: 10;
+}
+nav button{
+    position: relative;
+    z-index: 10;
+    margin: 5px;
+}
+.btn2{
+    padding: 6px 13px;
+    border-radius: 4px;
+    background-color: red;
+    color: white;
+   border: none;
+}
+.btn1{
+    padding: 5px 36px;
+    background-color: rgba(128, 128, 128, 0.129);
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+}
+.text{
+    color: white;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+     margin-top: 50px;
+     font-size: 55px;
+     font-weight: bolder;
+}
+.text .text1{
+    font-weight: 100;
+    font-size: 20px;
+}
+.text .text2{
+     font-weight: 100;
+    font-size: 17px;
+    margin-top: 30px;
+}
+.last{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    margin-top: 20px;
+}
+.last input{
+  padding: 16px 188px;
+    background-color: rgba(82, 80, 80, 0.279);
+    color: rgb(239, 230, 230);
+    border: 1px solid white;
+    border-radius: 2px;
+    padding-left: 10px;
+
+}
+.last input::placeholder{
+    color: rgb(161, 160, 160);
+    font-weight: 500;
+    font-size: medium;
+}
+.last button{
+        background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 9px 20px;
+    font-size: 24px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+.last svg{
+    filter: invert(1);
+
+}
+.last span{
+    margin-right: 10px;
+}
+.line{
+    padding: 3px 300px;
+    background-color: rgba(128, 128, 128, 0.516);
+}
+.secdiv{
+    display: flex;
+    gap: 40px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.secdiv img{
+    border-radius: 5px;
+}
+.secfirst .sec{
+    color: white;
+    font-size: 25px;
+    
+    margin: 20px 200px;
+}
+.secfirst{
+    margin: 10px 0;
+}
+.secdiv2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    margin: auto;
+    width: 70vw;
+    height: 30vh;
+}
+.info{
+    border-radius: 9px;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    background-color: rgba(44, 31, 233, 0.392);
+}
+
+
+.one{
+    padding: 6px 7px;
+    font-size: larger;
+    font-weight: 400;
+}
+.two{
+    padding: 7px 7px;
+    font-size: small;
+    color: rgb(201, 191, 191);
+}
+.faq{
+    display: flex;
+    flex-direction: column;
+   width: 78vw;
+   margin: auto;
+    gap: 10px;
+   
+    
+}
+.faqbox{
+    transition: all 1s ease-out;
+    display: flex;
+    color: white;
+    padding: 20px 20px;
+    background-color: rgb(45, 45, 45);
+    align-items: center;
+    font-size: 25px;
+    cursor: pointer;
+  justify-content: space-between;
+    
+}
+.faqbox svg{
+    filter: invert(1);
+}
+.faqbox:hover{
+    background-color: rgb(88, 87, 87);
+}
+.faqbox .plus{
+    color: white;
+}
+.last2 p{
+    color: white;
+    font-size: medium;
+    margin-top: 70px;
+    text-align: center;
+}
+.repeat input{
+    padding: 16px 380px;
+    background-color: rgba(128, 128, 128, 0.107);
+    color: rgb(239, 230, 230);
+    border: 1px solid white;
+    border-radius: 2px;
+    padding-left: 10px;
+}
+.repeat input::placeholder{
+    color: rgb(161, 160, 160);
+    font-weight: 500;
+    font-size: medium;
+}
+.repeat button{
+     background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 9px 20px;
+    font-size: 24px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+.repeat{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+    margin-top: 20px;
+}
+.repeat svg{
+    filter: invert(1);
+}
+.repeat span{
+     margin-right: 10px;
+}
+footer p{
+    color: #ffffffb3;
+    margin-left: 166px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+footer .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+margin: auto;
+max-width: 77vw;
+}
+footer .points{
+    display: flex;
+    flex-direction: column;
+    color: #ffffffb3;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.fbutton{
+    padding: 5px 36px;
+    background-color: rgba(128, 128, 128, 0.129);
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin: 50px 160px;
+    font-size: large;
+}
+
+.lasttext{
+    color: #ffffffb3;
+    margin: -15px 160px;;
+    margin-bottom: 20px;
+}
+
+
+/* for mobile css */
+
+@media screen and (max-width: 680px){
+.secdiv2{
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    position: relative;
+    justify-content: center;
+    text-align: center;
+}
+footer .grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* position: relative; */
+    justify-content: flex-start;
+}
+footer p{
+   margin-left: 65px;
+}
+.fbutton{
+    margin-left: 55px;
+}
+.lasttext{
+    margin-left: 65px;
+}
+.last2 p{
+   flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+.repeat{
+    display: flex;
+    flex-direction: column;
+}
+.repeat input{
+    margin: auto;
+padding: 15px 120px;
+}
+.repeat button{
+    padding: 5px 5px;
+   
+    margin-left: -216px;
+}
+
+}
