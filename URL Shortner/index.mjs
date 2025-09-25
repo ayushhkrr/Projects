@@ -1,0 +1,43 @@
+import * as http from "http";
+const port = 3000;
+const urlMap = {};
+const generateId = () => {
+  return Math.random().toString(36).slice(2, 8);
+};
+const server = http.createServer((req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  if (req.url === "/shortener" && req.method === "POST") {
+    let body = "";
+    req.on("data", (chunks) => {
+      body += chunks.toString();
+    });
+    req.on("end", () => {
+      try {
+        const { url } = JSON.parse(body);
+        if (!url || (!url.startsWith("http://") && !url.startsWith("https://"))){
+
+            res.statusCode = 400;
+            return res.end(JSON.stringify({ error: "User not found" }));
+        }
+
+        let id;
+        do {
+          id = generateId();
+        } while (urlMap[id]);
+        urlMap[id] = url;
+        const shortUrl = `http://localhost:3000/${id}`;
+        res.statusCode = 201;
+        res.end(JSON.stringify({shortUrl}));
+      } catch (err) {
+        res.statusCode = 400;
+        res.end(JSON.stringify({ error: "Invali request" }));
+      }
+    });
+  }else if(req.url.startsWith('/') && req.method === 'GET'){
+    
+  }
+});
+
+server.listen(port, () => {
+  console.log(`The server is running on PORT ${port}`);
+});
