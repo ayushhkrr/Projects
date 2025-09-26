@@ -14,10 +14,12 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       try {
         const { url } = JSON.parse(body);
-        if (!url || (!url.startsWith("http://") && !url.startsWith("https://"))){
-
-            res.statusCode = 400;
-            return res.end(JSON.stringify({ error: "User not found" }));
+        if (
+          !url ||
+          (!url.startsWith("http://") && !url.startsWith("https://"))
+        ) {
+          res.statusCode = 400;
+          return res.end(JSON.stringify({ error: "User not found" }));
         }
 
         let id;
@@ -27,14 +29,26 @@ const server = http.createServer((req, res) => {
         urlMap[id] = url;
         const shortUrl = `http://localhost:3000/${id}`;
         res.statusCode = 201;
-        res.end(JSON.stringify({shortUrl}));
+        res.end(JSON.stringify({ shortUrl }));
       } catch (err) {
         res.statusCode = 400;
         res.end(JSON.stringify({ error: "Invali request" }));
       }
     });
-  }else if(req.url.startsWith('/') && req.method === 'GET'){
-    
+  } else if (req.url.startsWith("/") && req.method === "GET") {
+    const id = req.url.slice(1);
+    const longUrl = urlMap[id];
+    if (longUrl) {
+      res.statusCode = 302;
+      res.setHeader("Location", longUrl);
+      res.end();
+    } else {
+      res.statusCode = 404;
+      res.end(JSON.stringify({ error: "URL not found" }));
+    }
+  } else {
+    res.statusCode = 404;
+    res.end(JSON.stringify({ error: "Invalid Operation" }));
   }
 });
 
