@@ -35,7 +35,11 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify({ error: "Invali request" }));
       }
     });
-  } else if (req.url.startsWith("/") && req.method === "GET") {
+  }else if(req.url === '/all-links' && req.method === 'GET'){
+    res.statusCode = 200
+    res.end(JSON.stringify(urlMap))
+  }
+   else if (req.url.startsWith("/") && req.method === "GET") {
     const id = req.url.slice(1);
     const longUrl = urlMap[id];
     if (longUrl) {
